@@ -50,20 +50,6 @@ class SolarPowerPlant(db.Model):
         self.current_production = current_production
         self.utilization = utilization
 
-class DailyProduction(db.Model):
-    __tablename__ = 'daily_production'
-
-    id = db.Column(db.Integer, primary_key=True)
-    date = db.Column(db.Date, nullable=False, unique=True)
-    total_value = db.Column(db.Integer, nullable=False)
-
-    def __init__(self, date, total_value):
-        self.date = date
-        self.total_value = total_value
-
-    def __repr__(self):
-        return f"<DailyProduction(date={self.date}, total_value={self.total_value})>"
-
 class Model(db.Model):
     __tablename__ = 'models'
 
